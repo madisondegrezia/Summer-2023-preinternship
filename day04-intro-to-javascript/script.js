@@ -66,3 +66,26 @@ const jobs = [
     postDate: "6 days ago",
   },
 ];
+
+for (let i = 0; i < jobs.length; i++) {
+  console.log(jobs[i].title);
+}
+
+function calculateAverageSalary(jobs) {
+  let totalSalary = 0;
+  for (let i = 0; i < jobs.length; i++) {
+    let salaryRange = jobs[i].salary.split(" - "); // Split the salary range into an array
+    let minSalary = parseInt(salaryRange[0].replace(/\D/g, "")); // Get the minimum salary as a number
+    let maxSalary = parseInt(salaryRange[1].replace(/\D/g, "")); // Get the maximum salary as a number
+    let averageSalary = (minSalary + maxSalary) / 2; // Calculate the average salary
+    totalSalary += averageSalary; // Add it to the total
+  }
+  return totalSalary / jobs.length; // Return the average salary across all jobs
+}
+
+console.log(`Average salary: ${calculateAverageSalary(jobs)}`);
+
+// const double = (num) => num * 2;
+// map essentially creates a new array
+const jobTitles = jobs.map((job) => job.title);
+console.log(jobTitles);
