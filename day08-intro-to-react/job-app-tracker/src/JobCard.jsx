@@ -1,5 +1,7 @@
+import { PropTypes } from "prop-types";
+
 const JobCard = ({ job }) => {
-    // pull data from argument
+  // pull data from argument
   const {
     image: { src, alt },
     company,
@@ -23,7 +25,21 @@ const JobCard = ({ job }) => {
       </div>
     </div>
   );
+};
 
-}
+JobCard.propTypes = {
+  // pull data from argument
+  job: {
+    image: {
+      src: PropTypes.string,
+      alt: PropTypes.string,
+    },
+    company: PropTypes.string,
+    title: PropTypes.string,
+    salary: PropTypes.string,
+    location: PropTypes.string,
+    postDate: PropTypes.string,
+  },
+};
 
-export default JobCard
+export default JobCard;
