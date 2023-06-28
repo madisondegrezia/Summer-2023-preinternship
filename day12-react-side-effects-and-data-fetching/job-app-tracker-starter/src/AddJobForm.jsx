@@ -39,7 +39,7 @@ function AddJobForm({ onAddJob }) {
   return (
     <form
       onSubmit={handleAddJobFormSubmit}
-      className="selection:bg-blue-200 flex flex-col gap-2"
+      className="selection:bg-blue-200 flex flex-col gap-1"
     >
       <h1>Add Job Posting</h1>
 
